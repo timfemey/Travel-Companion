@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Autocomplete } from "@react-google-maps/api";
 
-function Header(props: { setCoords: any }) {
+function Header(props: any) {
+  const [autoComplete, setautoComplete] = useState<any>();
+
   return (
     <>
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand">Travel Companion</a>
           <form className="d-flex">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              <i className="bi bi-search"></i>
-            </button>
+            <Autocomplete
+              onLoad={(autocomplete) => setautoComplete(autocomplete)}
+              onPlaceChanged={() => {
+                const lat = autoComplete.getPlace().geometry.location.lat();
+                const lng = autoComplete.getPlace().geometry.location.lng();
+                console.log(lat, lng);
+                props.setCoords({ lat, lng });
+              }}
+            >
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </Autocomplete>
+
             <button
               onClick={(e) => e.preventDefault()}
               className="btn float-end"
@@ -81,17 +91,32 @@ function Header(props: { setCoords: any }) {
                 aria-labelledby="dropdown"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setPreference(e.currentTarget.text);
+                    }}
+                  >
                     Picturesque
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setPreference(e.currentTarget.text);
+                    }}
+                  >
                     Hotels
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setPreference(e.currentTarget.text);
+                    }}
+                  >
                     Restraunt
                   </a>
                 </li>
@@ -100,7 +125,6 @@ function Header(props: { setCoords: any }) {
             <br />
             <li className="dropdown">
               <a
-                href="#"
                 className="nav-link dropdown-toggle  text-truncate"
                 id="dropdown"
                 data-bs-toggle="dropdown"
@@ -114,22 +138,46 @@ function Header(props: { setCoords: any }) {
                 aria-labelledby="dropdown"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setRating(0);
+                    }}
+                    href="#"
+                  >
                     All
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setRating(3);
+                    }}
+                    href="#"
+                  >
                     3 Star
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setRating(4);
+                    }}
+                    href="#"
+                  >
                     4 Star
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    onClick={(e) => {
+                      props.setRating(4.5);
+                    }}
+                    href="#"
+                  >
                     5 Star
                   </a>
                 </li>
