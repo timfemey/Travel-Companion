@@ -94,7 +94,7 @@ function Header(props: any) {
                   <a
                     className="dropdown-item"
                     onClick={(e) => {
-                      props.setPreference(e.currentTarget.text);
+                      props.setAttraction("attractions");
                     }}
                   >
                     Picturesque
@@ -104,7 +104,7 @@ function Header(props: any) {
                   <a
                     className="dropdown-item"
                     onClick={(e) => {
-                      props.setPreference(e.currentTarget.text);
+                      props.setAttraction("hotels");
                     }}
                   >
                     Hotels
@@ -114,7 +114,7 @@ function Header(props: any) {
                   <a
                     className="dropdown-item"
                     onClick={(e) => {
-                      props.setPreference(e.currentTarget.text);
+                      props.setAttraction("restaurants");
                     }}
                   >
                     Restraunt
