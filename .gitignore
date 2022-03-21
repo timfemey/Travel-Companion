@@ -7,7 +7,7 @@
 key.txt
 firebase.json
 .firebaserc
-/.firebase
+.firebase
 # testing
 /coverage
 
