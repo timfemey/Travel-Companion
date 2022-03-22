@@ -1,5 +1,5 @@
 View:
-[![travel37249c2ad6187f5c.gif](https://s1.gifyu.com/images/travel37249c2ad6187f5c.gif)](https://gifyu.com/image/SpKwI)
+[![travel48c330f4031befdb.gif](https://s1.gifyu.com/images/travel48c330f4031befdb.gif)](https://gifyu.com/image/SpwPO)
 
 Available at :  https://trvel-companion.web.app
 
