@@ -1,8 +1,5 @@
 View:
 
-[![travel98cfdb9249a33431.gif](https://s1.gifyu.com/images/travel98cfdb9249a33431.gif)](https://gifyu.com/image/SpweH)
-
-Available at :  https://trvel-companion.web.app
 
 # Getting Started with Create React App
 
